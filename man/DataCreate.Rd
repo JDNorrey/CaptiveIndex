@@ -13,9 +13,9 @@ DataCreate(x, Measures = NULL)
 This function allows you to create a dataset to be used in the captive association index
 }
 \examples{
-NN.CP <- DataCreate (giraffe)
-head (NN.CP)
-write.csv(NN.CP, "Results.csv")
+NN.ID <- DataCreate (giraffe)
+head (NN.ID)
+write.csv(NN.ID, "Results.csv")
 DataCreate()
 }
 \keyword{Association}
