@@ -3,7 +3,7 @@
 #' This function calculates the sociality measure using the data created from the DataCreate Function.
 #' @param x is the output dataframe from the /code{DataCreate} function
 #' @param Weight.1 Input Nearest Neighbour Weight from /code{Weights} function
-#' @param Weight.2 Input Interaction Distance Weight from /code{Weights} function
+#' @param Weight.2 Input Interaction Distance Weight from /code{Weights} function 
 #' @keywords CaptiveIndex, association index, weights
 #' @export
 #' @examples
