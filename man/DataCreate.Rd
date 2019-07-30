@@ -7,7 +7,7 @@
 DataCreate(x, Measures = NULL)
 }
 \arguments{
-\item{Add}{in the dataframe matching the example using the appropraite codes}
+\item{x}{is the dataframe matching the example using the appropriate column headers (see details)}
 }
 \description{
 This function allows you to create a dataset to be used in the captive association index
@@ -18,6 +18,7 @@ head (NN.CP)
 write.csv(NN.CP, "Results.csv")
 DataCreate()
 }
+\keyword{Association}
 \keyword{Captive}
-\keyword{association}
+\keyword{Index,}
 \keyword{index}

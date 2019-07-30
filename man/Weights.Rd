@@ -7,18 +7,15 @@
 Weights(x)
 }
 \arguments{
-\item{add}{in dataframe names}
+\item{x}{is the dataframe matching the example using the appropriate column headers (see details)}
 }
 \description{
-This function calculates the weighting for nearest neighbour and proximity values
+This function calculates the weights for the proximity conditions
 }
 \examples{
 Weights (giraffe)
-Weights()
 }
-\keyword{and}
+\keyword{conditions}
 \keyword{nearest}
-\keyword{neighbour}
+\keyword{neighbour,}
 \keyword{proximity}
-\keyword{values}
-\keyword{weights}

@@ -4,19 +4,27 @@
 \alias{CaptiveIndex}
 \title{CaptiveIndex Function}
 \usage{
-CaptiveIndex(x, Weight.1, Weight.2, Weight.3 = NULL, Weight.4 = NULL)
+CaptiveIndex(x, Weight.1, Weight.2)
 }
 \arguments{
-\item{Dataset}{name, Nearest neighbour weight, Close proximity weight, v3, v4}
+\item{x}{is the output dataframe from the /code{DataCreate} function}
+
+\item{Weight.1}{Input Nearest Neighbour Weight from /code{Weights} function}
+
+\item{Weight.2}{Input Interaction Distance Weight from /code{Weights} function}
 }
 \description{
 This function calculates the sociality measure using the data created from the DataCreate Function.
 }
 \examples{
-Results<-CaptiveIndex (NN.CP, 1.4, 53.2)
-CaptiveIndex()
+data(giraffe)
+W<-Weights (giraffe)
+NN.ID <- DataCreate (giraffe)
+head (NN.ID)
+Results<-CaptiveIndex (NN.ID, W$NN, W$IDist)
+head (Results)
 }
 \keyword{CaptiveIndex,}
 \keyword{association}
 \keyword{index,}
-\keyword{weightings}
+\keyword{weights}
