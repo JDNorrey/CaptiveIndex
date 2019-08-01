@@ -5,10 +5,8 @@
 #' @keywords Captive Index, Association index
 #' @export
 #' @examples
-#'NN.CP <- DataCreate (giraffe)
-#'head (NN.CP)
-#'write.csv(NN.CP, "Results.csv")
-#' DataCreate()
+#'NN.ID <- DataCreate (giraffe)
+#'head (NN.ID)
 
 DataCreate<-function(x, Measures=NULL){
   ### Identify subject names

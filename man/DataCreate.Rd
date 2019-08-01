@@ -15,8 +15,6 @@ This function allows you to create a dataset to be used in the captive associati
 \examples{
 NN.ID <- DataCreate (giraffe)
 head (NN.ID)
-write.csv(NN.ID, "Results.csv")
-DataCreate()
 }
 \keyword{Association}
 \keyword{Captive}
