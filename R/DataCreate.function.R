@@ -57,6 +57,6 @@ DataCreate<-function(x, Measures=NULL){
     res <- rbind(res, tmp)
   }
   res.all<-na.omit(res) # check no NAs in other rows..
-  res.all$Pair <- paste(substring(res.all$Subject, 1,last=1000000),substring(res.all$Partner,1, last=1000000), sep="-")
+  res.all$Dyad <- paste(substring(res.all$Subject, 1,last=1000000),substring(res.all$Partner,1, last=1000000), sep="-")
   return(res.all)
 }
