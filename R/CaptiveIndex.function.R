@@ -23,8 +23,8 @@ CaptiveIndex<-function(x, Weight.1, Weight.2){
 
   for(i in 1:nrow(pairs)){
     #      n1= (NN/N +NN/N)
-    n1[i]<- (x$NN[x$Pair==pairs[i,1]]/x$N[x$Pair==pairs[i,1]]) + (x$NN[x$Pair==pairs[i,2]]/x$N[x$Pair==pairs[i,2]])
-    n2[i]<- (x$IDist[x$Pair==pairs[i,1]]/x$N[x$Pair==pairs[i,1]]) + (x$IDist[x$Pair==pairs[i,2]]/x$N[x$Pair==pairs[i,2]])
+    n1[i]<- (x$NN[x$Dyad==pairs[i,1]]/x$N[x$Dyad==pairs[i,1]]) + (x$NN[x$Dyad==pairs[i,2]]/x$N[x$Dyad==pairs[i,2]])
+    n2[i]<- (x$IDist[x$Dyad==pairs[i,1]]/x$N[x$Dyad==pairs[i,1]]) + (x$IDist[x$Dyad==pairs[i,2]]/x$N[x$Dyad==pairs[i,2]])
   }
   x<- cbind(x,n1, n2)
 
