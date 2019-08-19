@@ -1,11 +1,17 @@
 Package: CaptiveIndex
 Title:  Calculate sociality measure for captive populations
 Version: 0.0.0.9000
-Authors@R: 
-
-Jack Lewton1*, John Norrey2, Christian Devenish2
-
-person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: c(
+    person(given = "Jack",
+           family = "Lewton",
+           role = c("aut", "cre"),
+           email = "j.lewton19@imperial.ac.uk"),
+    person(given = "John",
+           family = "Norrey",
+           role = c("aut")),
+    person(given = "Christian",
+           family = "Devenish",
+           role = c("aut")))
 Description: Calculate sociality measure for captive populations
 Depends: R (>= 3.5.0)
 License: GMPL
@@ -16,3 +22,5 @@ Suggests:
     knitr, 
     rmarkdown
 VignetteBuilder: knitr
+
+
