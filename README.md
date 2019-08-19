@@ -1,5 +1,5 @@
 # CaptiveIndex
- R package for captive population association index
+ R package for producing association indices for captive animal populations
 
 
 You can load the package in R using the `devtools` library:
