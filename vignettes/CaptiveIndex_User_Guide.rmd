@@ -70,3 +70,20 @@ Results <- CaptiveIndex(NN.ID, W$NN, W$IDist)
 head(Results)
 ```
 
+## (optional) 
+## Plot network using igraph
+## Convert 'Results' output into matrix using Subject, Partner and CaptiveIndex1 and then load the data
+library(CaptiveIndex)
+library(igraph)
+gir<-read.table(file.choose(), header=T, sep=",")
+
+## Format matrix
+Nodelist <- names(gir)[-1]
+Matrix <- data.matrix(gir)[,-1]
+rownames(Matrix) <- colnames(Matrix) <- Nodelist
+
+## Plot graph with wieghted edges
+g <- graph.adjacency(Matrix,mode="undirected",weighted=TRUE,diag=FALSE)
+plot.igraph(g,vertex.label=V(g)$name,layout=layout.fruchterman.reingold, edge.color="black",edge.width=(E(g)$weight), mode = "circle")
+
+
