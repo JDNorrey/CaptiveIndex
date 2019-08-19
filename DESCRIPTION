@@ -12,7 +12,7 @@ Authors@R: c(
     person(given = "Christian",
            family = "Devenish",
            role = c("aut")))
-Description: Create association indices for captive animal populations
+Description: Create association indices for captive animal populations. The index uses two assocation levels and takes into account individuals that are missing from the study population and individuals with different number of observations.
 Depends: R (>= 3.5.0)
 License: GPL-3.0
 Encoding: UTF-8
