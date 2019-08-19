@@ -1,0 +1,68 @@
+---
+title: "Captive Index User Guide"
+author: "Jack Lewton, Danny Norrey, Christian Devenish"
+date: "19 August 2019"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Captive Index User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1.	Data Organization (see Giraffe.Data.csv)
+
+Data should be set out in the same format as in the Giraffe example data file:
+
+```{r}
+
+data(giraffe)
+head(giraffe)
+```
+
+Columns should include the following:
+Subject - Individual being sampled
+Present – list of individuals present separate by a space
+N.N – names of individual who is the nearest neighbour (within x metres)
+C.P – names of individual who is within the closet proximity (within x metres)
+NB. If there is no individual for N.N or C.P record as a 0 (zero).
+
+## 2.	Create a dataset for the association measures
+
+Use `DataCreate` function to prepare data for analysis:
+
+This function will identify the number of times pairs are together, providing a short hand descriptor of the pair using the first 3 letters of each individual. 
+
+```{r} 
+NN.ID <- DataCreate (giraffe)
+
+head(NN.ID)
+
+```
+
+## 3. Calculate weights
+
+Calculate the weights for nearest neighbour and proximity values using the `Weights` function:
+
+```{r}
+
+W <- Weights(giraffe)
+W
+
+```
+
+## 4. Calculate Captive Index
+Calculate the Captive Index (or association meassure) using the data created in the `DataCreate` function and applying the weights from `Weights` function:
+
+
+```{r}
+?CaptiveIndex
+
+Results <- CaptiveIndex(NN.ID, W$NN, W$IDist)
+head(Results)
+```
+
