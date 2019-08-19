@@ -10,25 +10,29 @@ vignette: >
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 ```
 
 ## 1.	Data Organization (see Giraffe.Data.csv)
 
-Data should be set out in the same format as in the Giraffe example data file:
+Data should be set out in the same format as in the `giraffe` example data file. Note that a warning will be given for any of the possible pairs not recorded together.
 
 ```{r}
-
+library(CaptiveIndex)
 data(giraffe)
 head(giraffe)
 ```
 
 Columns should include the following:
-Subject - Individual being sampled
-Present – list of individuals present separate by a space
-N.N – names of individual who is the nearest neighbour (within x metres)
-C.P – names of individual who is within the closet proximity (within x metres)
+*  Subject - Individual being sampled 
+*  Present – list of individuals present separate by a space 
+*  N.N – names of individual who is the nearest neighbour (within x metres) 
+*  C.P – names of individual who is within the closet proximity (within x metres) 
+
 NB. If there is no individual for N.N or C.P record as a 0 (zero).
 
 ## 2.	Create a dataset for the association measures
@@ -60,7 +64,7 @@ Calculate the Captive Index (or association meassure) using the data created in 
 
 
 ```{r}
-?CaptiveIndex
+# ?CaptiveIndex see help file 
 
 Results <- CaptiveIndex(NN.ID, W$NN, W$IDist)
 head(Results)
