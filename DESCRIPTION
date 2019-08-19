@@ -14,7 +14,7 @@ Authors@R: c(
            role = c("aut")))
 Description: Calculate sociality measure for captive populations
 Depends: R (>= 3.5.0)
-License: GMPL
+License: GPL-3.0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
