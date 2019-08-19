@@ -12,7 +12,7 @@ Authors@R: c(
     person(given = "Christian",
            family = "Devenish",
            role = c("aut")))
-Description: Calculate sociality measure for captive populations
+Description: Create association indices for captive animal populations
 Depends: R (>= 3.5.0)
 License: GPL-3.0
 Encoding: UTF-8
