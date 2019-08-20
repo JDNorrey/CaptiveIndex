@@ -64,26 +64,26 @@ Calculate the Captive Index (or association meassure) using the data created in 
 
 
 ```{r}
-# ?CaptiveIndex see help file 
-
 Results <- CaptiveIndex(NN.ID, W$NN, W$IDist)
 head(Results)
 ```
 
-## (optional) 
-## Plot network using igraph
-## Convert 'Results' output into matrix using Subject, Partner and CaptiveIndex1 and then load the data
-library(CaptiveIndex)
+## 5. Plot network using igraph (optional) 
+Convert 'Results' output into a square matrix, then plot a sociogram using igraph.
+
+```{r}
+# reshape the data frame into a square matrix 
+# install.packages("reshape2")
+mat <- reshape2::acast(Results, Subject ~ Partner, value.var = "CaptiveIndex1")
+
 library(igraph)
-gir<-read.table(file.choose(), header=T, sep=",")
+## Plot graph with weighted edges
+g <- graph.adjacency(mat, mode="undirected", weighted=TRUE, diag=FALSE)
 
-## Format matrix
-Nodelist <- names(gir)[-1]
-Matrix <- data.matrix(gir)[,-1]
-rownames(Matrix) <- colnames(Matrix) <- Nodelist
-
-## Plot graph with wieghted edges
-g <- graph.adjacency(Matrix,mode="undirected",weighted=TRUE,diag=FALSE)
-plot.igraph(g,vertex.label=V(g)$name,layout=layout.fruchterman.reingold, edge.color="black",edge.width=(E(g)$weight), mode = "circle")
-
+plot.igraph(g, vertex.label = V(g)$name,
+            layout = layout.fruchterman.reingold, 
+            edge.color = "black",
+            edge.width = (E(g)$weight), 
+            mode = "circle")
+```
 
