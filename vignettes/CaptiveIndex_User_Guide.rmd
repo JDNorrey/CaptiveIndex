@@ -75,9 +75,15 @@ Convert 'Results' output into a square matrix, then plot a sociogram using igrap
 # reshape the data frame into a square matrix 
 # install.packages("reshape2")
 mat <- reshape2::acast(Results, Subject ~ Partner, value.var = "CaptiveIndex1")
+```
 
+```{r, message = F}
+# install.packages("igraph")
 library(igraph)
 ## Plot graph with weighted edges
+```
+
+```{r, fig.width = 6, fig.height = 6}
 g <- graph.adjacency(mat, mode="undirected", weighted=TRUE, diag=FALSE)
 
 plot.igraph(g, vertex.label = V(g)$name,
