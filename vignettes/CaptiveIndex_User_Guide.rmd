@@ -74,7 +74,8 @@ Convert 'Results' output into a square matrix, then plot a sociogram using igrap
 ```{r}
 # reshape the data frame into a square matrix 
 # install.packages("reshape2")
-mat <- reshape2::acast(Results, Subject ~ Partner, value.var = "CaptiveIndex1")
+library(reshape2)
+mat <- acast(Results, Subject ~ Partner, value.var = "CaptiveIndex1")
 ```
 
 ```{r, message = F}
