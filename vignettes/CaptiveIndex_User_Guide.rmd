@@ -17,8 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## 1.	Data Organization (see Giraffe.Data.csv)
-
+## 1.	Data Organization  
 Data should be set out in the same format as in the `giraffe` example data file. Note that a warning will be given for any of the possible pairs not recorded together.
 
 ```{r}
