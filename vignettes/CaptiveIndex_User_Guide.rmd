@@ -89,7 +89,7 @@ g <- graph.adjacency(mat, mode="undirected", weighted=TRUE, diag=FALSE)
 plot.igraph(g, vertex.label = V(g)$name,
             layout = layout.fruchterman.reingold, 
             edge.color = "black",
-            edge.width = (E(g)$weight), 
+            edge.width = (E(g)$weight)*20, 
             mode = "circle")
 ```
 
